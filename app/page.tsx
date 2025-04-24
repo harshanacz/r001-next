@@ -2,12 +2,16 @@
 
 import Link from 'next/link';
 import { useUser, UserButton } from '@clerk/nextjs';
+import HeroSection from '@/components/home/hero-section';
+import Navbar from '@/components/home/navbar';
 
 export default function Home() {
   const { user } = useUser();
-
+ 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-6 p-4 bg-gray-100">
+    <div className="flex min-h-screen flex-col items-center justify-center  bg-gray-100">
+      <Navbar/>
+      <HeroSection/>
       {user ? (
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-2xl font-bold">Welcome Back!</h1>
